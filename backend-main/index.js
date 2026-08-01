@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
 const http = require("http");
 const { Server } = require("socket.io");
 const mainRouter = require("./routes/main.router");
@@ -70,6 +71,7 @@ function startServer() {
   const app = express();
   const port = process.env.PORT || 3000;
 
+  app.use(cookieParser());
   app.use(bodyParser.json());
   app.use(express.json());
 
@@ -80,7 +82,10 @@ function startServer() {
     .then(() => console.log("MongoDB connected!"))
     .catch((err) => console.error("Unable to connect : ", err));
 
-  app.use(cors({ origin: "*" }));
+  app.use(cors({
+    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    credentials: true,
+  }));
 
   app.use("/", mainRouter);
 
@@ -88,7 +93,7 @@ function startServer() {
   const httpServer = http.createServer(app);
   const io = new Server(httpServer, {
     cors: {
-      origin: "*",
+      origin: process.env.CLIENT_URL || "http://localhost:5173",
       methods: ["GET", "POST"],
     },
   });
