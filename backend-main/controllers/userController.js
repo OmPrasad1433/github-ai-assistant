@@ -45,7 +45,7 @@ async function signup(req, res) {
     }
 
     await connectClient();
-    const db = client.db("githubclone");
+    const db = client.db();
     const usersCollection = db.collection("users");
 
     const user = await usersCollection.findOne({
@@ -101,7 +101,7 @@ async function login(req, res) {
     }
 
     await connectClient();
-    const db = client.db("githubclone");
+    const db = client.db();
     const usersCollection = db.collection("users");
 
     const user = await usersCollection.findOne({ email: email.trim().toLowerCase() });
@@ -148,7 +148,7 @@ async function getMe(req, res) {
     }
 
     await connectClient();
-    const db = client.db("githubclone");
+    const db = client.db();
     const usersCollection = db.collection("users");
 
     const user = await usersCollection.findOne(
@@ -173,7 +173,7 @@ async function getMe(req, res) {
 async function getAllUsers(req, res) {
   try {
     await connectClient();
-    const db = client.db("githubclone");
+    const db = client.db();
     const usersCollection = db.collection("users");
 
     const users = await usersCollection.find({}, { projection: { password: 0 } }).toArray();
@@ -193,7 +193,7 @@ async function getUserProfile(req, res) {
     }
 
     await connectClient();
-    const db = client.db("githubclone");
+    const db = client.db();
     const usersCollection = db.collection("users");
 
     const user = await usersCollection.findOne({
@@ -230,7 +230,7 @@ async function updateUserProfile(req, res) {
     }
 
     await connectClient();
-    const db = client.db("githubclone");
+    const db = client.db();
     const usersCollection = db.collection("users");
 
     let updateFields = { email: email.trim().toLowerCase() };
@@ -279,7 +279,7 @@ async function deleteUserProfile(req, res) {
     }
 
     await connectClient();
-    const db = client.db("githubclone");
+    const db = client.db();
     const usersCollection = db.collection("users");
 
     const result = await usersCollection.deleteOne({
