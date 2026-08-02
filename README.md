@@ -1,16 +1,44 @@
 # 🚀 GitHub AI Assistant
 
-An AI-powered GitHub-inspired repository management platform built with the **MERN Stack** and **Google Gemini AI**. The application enables users to securely manage repositories, track issues, and leverage AI to generate README files, repository summaries, and development assistance.
+An AI-powered GitHub-inspired repository management platform built using the **MERN Stack** and **Google Gemini AI**. The application enables users to securely create and manage repositories, track issues, and leverage AI to generate repository descriptions, summaries, and README content.
 
 ---
 
 ## 🌐 Live Demo
 
 ### Frontend (Vercel)
-**https://github-ai-assistant-steel.vercel.app**
+
+🔗 https://github-ai-assistant-steel.vercel.app
 
 ### Backend (Render)
-**https://github-ai-assistant-lawa.onrender.com**
+
+🔗 https://github-ai-assistant-lawa.onrender.com
+
+---
+
+# 📸 Project Screenshots
+
+## 🔐 Login Page
+
+![Login](screenshots/login.png)
+
+---
+
+## 📊 Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+## 📁 Repository
+
+![Repository](screenshots/repository.png)
+
+---
+
+## 👤 User Profile
+
+![Profile](screenshots/profile.png)
 
 ---
 
@@ -18,8 +46,8 @@ An AI-powered GitHub-inspired repository management platform built with the **ME
 
 ## 🔐 Authentication
 
-- Secure User Signup
-- User Login
+- User Signup
+- Secure Login
 - JWT Authentication
 - Protected Routes
 - Persistent User Sessions
@@ -32,15 +60,17 @@ An AI-powered GitHub-inspired repository management platform built with the **ME
 - View Repository
 - Update Repository
 - Delete Repository
-- Public / Private Repository Support
+- Public & Private Repository Support
 
 ---
 
-## 🤖 AI Features (Google Gemini)
+## 🤖 AI Features
+
+Powered by **Google Gemini AI**
 
 - AI README Generator
+- AI Repository Description Generator
 - AI Repository Summary
-- AI Description Generator
 - AI Coding Assistant
 
 ---
@@ -56,10 +86,9 @@ An AI-powered GitHub-inspired repository management platform built with the **ME
 
 ## 👤 User Dashboard
 
-- Repository Statistics
 - User Profile
 - Repository Ownership
-- Contribution Overview
+- Repository Statistics
 
 ---
 
@@ -99,19 +128,8 @@ An AI-powered GitHub-inspired repository management platform built with the **ME
 
 # 📂 Project Structure
 
-```
+```text
 github-ai-assistant
-│
-├── frontend-main
-│   ├── public
-│   ├── src
-│   │   ├── components
-│   │   ├── pages
-│   │   ├── hooks
-│   │   ├── Routes.jsx
-│   │   └── main.jsx
-│   │
-│   └── package.json
 │
 ├── backend-main
 │   ├── config
@@ -122,12 +140,27 @@ github-ai-assistant
 │   ├── index.js
 │   └── package.json
 │
+├── frontend-main
+│   ├── public
+│   ├── src
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── hooks
+│   │   └── main.jsx
+│   └── package.json
+│
+├── screenshots
+│   ├── login.png
+│   ├── dashboard.png
+│   ├── repository.png
+│   └── profile.png
+│
 └── README.md
 ```
 
 ---
 
-# ⚙ Installation
+# ⚙️ Installation
 
 ## Clone Repository
 
@@ -141,7 +174,9 @@ git clone https://github.com/OmPrasad1433/github-ai-assistant.git
 
 ```bash
 cd backend-main
+
 npm install
+
 npm start
 ```
 
@@ -151,7 +186,9 @@ npm start
 
 ```bash
 cd frontend-main
+
 npm install
+
 npm run dev
 ```
 
@@ -159,7 +196,7 @@ npm run dev
 
 # 🔑 Environment Variables
 
-### Backend (.env)
+## Backend (.env)
 
 ```env
 PORT=3002
@@ -177,7 +214,9 @@ GEMINI_MODEL=gemini-3.5-flash
 GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 ```
 
-### Frontend (.env)
+---
+
+## Frontend (.env)
 
 ```env
 VITE_API_URL=http://localhost:3002
@@ -185,12 +224,12 @@ VITE_API_URL=http://localhost:3002
 
 ---
 
-# 🚀 Future Improvements
+# 🚀 Future Enhancements
 
 - GitHub OAuth Authentication
 - Repository Search
-- Pull Requests
 - Repository Collaborators
+- Pull Requests
 - Notifications
 - Markdown Editor
 - File Upload Support
@@ -198,29 +237,29 @@ VITE_API_URL=http://localhost:3002
 
 ---
 
-# 🐛 Production Debugging Experience
+# 🐛 Production Debugging
 
-During deployment, an issue occurred because **MongoClient** and **Mongoose** were connected to different MongoDB databases. This caused repository creation to fail with an **Owner not found** error.
+During production deployment, an issue occurred because **MongoClient** and **Mongoose** were connected to different MongoDB databases. This caused repository creation to fail with an **Owner not found** error.
 
-The issue was resolved by unifying both database clients to use the same database specified in the MongoDB connection string, ensuring consistent data access throughout the application.
+The issue was resolved by configuring both MongoDB clients to use the same database specified in the MongoDB connection string, ensuring consistent data access across the application.
 
 ---
 
-# 📚 Learning Outcomes
+# 📚 What I Learned
 
-This project provided hands-on experience in:
+This project helped me gain hands-on experience in:
 
 - Full Stack MERN Development
-- REST API Design
+- REST API Development
 - JWT Authentication
 - MongoDB Atlas
 - Mongoose ODM
 - Google Gemini AI Integration
-- Production Deployment
 - Environment Variable Management
+- Production Deployment
 - CORS Configuration
 - Git & GitHub Workflow
-- Production Debugging
+- Debugging Real-World Production Issues
 
 ---
 
@@ -232,11 +271,10 @@ B.Tech – Information Technology
 
 Odisha University of Technology and Research (OUTR)
 
-GitHub:
-https://github.com/OmPrasad1433
+GitHub: https://github.com/OmPrasad1433
 
 ---
 
 # ⭐ Support
 
-If you found this project helpful, please consider giving it a ⭐ on GitHub.
+If you found this project useful, please consider giving it a ⭐ on GitHub.
